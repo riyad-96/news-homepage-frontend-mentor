@@ -64,7 +64,6 @@ ul {
 
 /*! Main stylings */
 main {
-  min-height: 100%;
   padding-inline: 1rem;
 }
 
@@ -365,11 +364,12 @@ header > img {
   }
 
   header {
-    padding-block: 2rem 0;
+    padding-block: 3rem 0;
   }
 
   .grid-layout {
-    padding-block: 3rem;
+    padding-block: 3rem 4rem;
+    row-gap: 4.625rem;
   }
 
   .hero-texts > div {
