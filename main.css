@@ -105,6 +105,9 @@ header>img {
     max-width: fit-content;
     padding: 1rem 2rem;
     background-color: var(--soft-red);
+
+    transition: background-color 150ms linear, color 150ms linear;
+    /* transition-delay: 50ms; */
   }
 
   a:hover {
@@ -186,18 +189,99 @@ header>img {
     margin-block: 0.525rem;
     font-weight: 800;
   }
-
+  
   a:hover h3 {
     color: var(--soft-red);
   }
 }
 
+.close-menu,
+.open-menu{
+  @media(width >= 500px){
+    cursor: pointer;
+  }
+}
 
 
 /* ! ----- Layout styling ----- */
 @media (width < 700px) {
-  .nav-menu {
+  .overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    background-color: hsl(236, 13%, 10%, 0.5);
+    z-index: 4;
+
     display: none;
+    opacity: 0;
+    transition-property: display opacity;
+    transition-duration: 300ms;
+    transition-timing-function: ease;
+    transition-delay: 100ms;
+    transition-behavior: allow-discrete;
+  }
+
+  .overlay.appear {
+    display: block;
+    opacity: 1;
+
+    @starting-style {
+      opacity: 0;
+    }
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    min-width: 70%;
+    min-height: 200%;
+    z-index: 5;
+    transform: translateX(100%);
+
+    transition: 300ms ease;
+    transition-delay: 100ms;
+
+    background-color: var(--off-white);
+    padding: 2rem 1rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5rem;
+
+    >img {
+      align-self: flex-end;
+    }
+
+    ul {
+      display: grid;
+      gap: 1rem;
+      width: 100%;
+    }
+
+    a {
+      display: block;
+      text-decoration: none;
+      font-size: 1.325rem;
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  .nav-menu.appear{
+    transform: translateX(0);
+  }
+
+
+  .close-menu:active,
+  .open-menu:active{
+    scale: 0.94;
+  }
+
+  .open-menu{
+    padding-block: 0.5rem;
   }
 
   .new-section {
@@ -277,7 +361,6 @@ header>img {
 
   main {
     min-height: 100vh;
-    border: 1px solid red;
     display: grid;
     place-items: center;
   }
@@ -291,7 +374,6 @@ header>img {
   }
 
   .hero-texts>div {
-    border: 1px solid green;
     display: grid;
     align-content: space-between;
   }
