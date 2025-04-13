@@ -34,6 +34,7 @@ html {
 body {
   margin: 0;
   font-size: 0.9375rem;
+  background-color: var(--off-white);
   color: var(--very-dark-blue);
 }
 
