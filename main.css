@@ -80,7 +80,7 @@ header {
   padding-block: 2rem;
 }
 
-header>img {
+header > img {
   max-width: clamp(2.8125rem, 2.3724rem + 1.8779vw, 4.0625rem);
 }
 
@@ -106,7 +106,9 @@ header>img {
     padding: 1rem 2rem;
     background-color: var(--soft-red);
 
-    transition: background-color 150ms linear, color 150ms linear;
+    transition:
+      background-color 150ms linear,
+      color 150ms linear;
     /* transition-delay: 50ms; */
   }
 
@@ -144,7 +146,7 @@ header>img {
     padding-block-start: 1.725rem;
   }
 
-  a:hover>h3 {
+  a:hover > h3 {
     color: var(--soft-orange);
   }
 
@@ -189,23 +191,22 @@ header>img {
     margin-block: 0.525rem;
     font-weight: 800;
   }
-  
+
   a:hover h3 {
     color: var(--soft-red);
   }
 }
 
 .close-menu,
-.open-menu{
-  @media(width >= 500px){
+.open-menu {
+  @media (width >= 500px) {
     cursor: pointer;
   }
 }
 
-
 /* ! ----- Layout styling ----- */
 @media (width < 700px) {
-  .overlay{
+  .overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -252,7 +253,7 @@ header>img {
     align-items: flex-start;
     gap: 5rem;
 
-    >img {
+    > img {
       align-self: flex-end;
     }
 
@@ -270,17 +271,16 @@ header>img {
     }
   }
 
-  .nav-menu.appear{
+  .nav-menu.appear {
     transform: translateX(0);
   }
 
-
   .close-menu:active,
-  .open-menu:active{
+  .open-menu:active {
     scale: 0.94;
   }
 
-  .open-menu{
+  .open-menu {
     padding-block: 0.5rem;
   }
 
@@ -289,14 +289,13 @@ header>img {
   }
 }
 
-
 .grid-layout {
   display: grid;
   grid-auto-columns: 1fr;
   grid-template-areas:
-    'hero'
-    'new'
-    'news';
+    "hero"
+    "new"
+    "news";
 }
 
 .hero {
@@ -310,7 +309,6 @@ header>img {
 .top-news-section {
   grid-area: news;
 }
-
 
 @media (width >=700px) {
   header {
@@ -343,8 +341,8 @@ header>img {
   .grid-layout {
     gap: 2rem;
     grid-template-areas:
-      'hero hero'
-      'new news';
+      "hero hero"
+      "new news";
   }
 
   .hero-texts {
@@ -354,7 +352,7 @@ header>img {
   }
 }
 
-@media(width > 1140px) {
+@media (width > 1140px) {
   body {
     height: 100%;
   }
@@ -373,7 +371,7 @@ header>img {
     padding-block: 3rem;
   }
 
-  .hero-texts>div {
+  .hero-texts > div {
     display: grid;
     align-content: space-between;
   }
@@ -384,8 +382,8 @@ header>img {
 
   .grid-layout {
     grid-template-areas:
-      'hero hero new'
-      'news news news';
+      "hero hero new"
+      "news news news";
   }
 }
 
